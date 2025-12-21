@@ -1,0 +1,198 @@
+.resume-section {
+  padding: 20px 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+.resume-content {
+  text-align: center;
+}
+
+.resume-info h3 {
+  color: #38bdf8;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.resume-info p {
+  color: #d1d5db;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.download-btn {
+  background: #38bdf8;
+  color: #020617;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+}
+
+.download-btn:hover {
+  background: #60d5fa;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.4);
+}
+
+.alternative-section {
+  margin-bottom: 50px;
+  padding: 30px;
+  background: rgba(56, 189, 248, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.1);
+}
+
+.alternative-section h4 {
+  color: #38bdf8;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.social-links-resume {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.social-links-resume a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  color: #38bdf8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.social-links-resume a:hover {
+  background: #38bdf8;
+  color: #020617;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+}
+
+.thank-you-section {
+  padding: 30px;
+  background: rgba(2, 6, 23, 0.8);
+  border-radius: 16px;
+  border-left: 4px solid #38bdf8;
+}
+
+.thank-you-section h4 {
+  color: #38bdf8;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+
+.thank-you-section p {
+  color: #d1d5db;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  font-style: italic;
+}
+
+.thank-you-section p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .social-links-resume {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .social-links-resume a {
+    width: 200px;
+    justify-content: center;
+  }
+}
+
+/* =================================================
+   RED THEME STYLES
+================================================= */
+body.red-theme .resume-info h3,
+body.red-theme .alternative-section h4,
+body.red-theme .thank-you-section h4 {
+  color: #ef4444;
+}
+
+body.red-theme .download-btn {
+  background: #ef4444;
+}
+
+body.red-theme .download-btn:hover {
+  background: #f87171;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4);
+}
+
+body.red-theme .alternative-section {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.1);
+}
+
+body.red-theme .social-links-resume a {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+}
+
+body.red-theme .social-links-resume a:hover {
+  background: #ef4444;
+  box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+}
+
+body.red-theme .thank-you-section {
+  border-left-color: #ef4444;
+}
+
+/* =================================================
+   PURPLE THEME STYLES
+================================================= */
+body.purple-theme .resume-info h3,
+body.purple-theme .alternative-section h4,
+body.purple-theme .thank-you-section h4 {
+  color: #a855f7;
+}
+
+body.purple-theme .download-btn {
+  background: #a855f7;
+}
+
+body.purple-theme .download-btn:hover {
+  background: #9333ea;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+}
+
+body.purple-theme .alternative-section {
+  background: rgba(168, 85, 247, 0.05);
+  border-color: rgba(168, 85, 247, 0.1);
+}
+
+body.purple-theme .social-links-resume a {
+  background: rgba(168, 85, 247, 0.1);
+  border-color: rgba(168, 85, 247, 0.3);
+  color: #a855f7;
+}
+
+body.purple-theme .social-links-resume a:hover {
+  background: #a855f7;
+  box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+}
+
+body.purple-theme .thank-you-section {
+  border-left-color: #a855f7;
+}

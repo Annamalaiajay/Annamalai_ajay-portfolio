@@ -1,0 +1,163 @@
+.experience-section {
+  padding: 20px 40px;
+  position: relative;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #38bdf8;
+  margin-bottom: 80px;
+}
+
+/* TIMELINE LINE */
+.timeline {
+  position: relative;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 4px;
+  height: 100%;
+  background: #38bdf8;
+  transform: translateX(-50%);
+}
+
+/* ROW */
+.timeline-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+/* LEFT / RIGHT */
+.timeline-row.left {
+  justify-content: flex-end;
+}
+
+.timeline-row.right {
+  justify-content: flex-start;
+}
+
+/* CONTENT CARD */
+.content {
+  background: #020617;
+  padding: 18px 22px;
+  border-radius: 14px;
+  width: 300px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+}
+
+.timeline-row.left .content {
+  text-align: right;
+  margin-right: 60px;
+}
+
+.timeline-row.right .content {
+  text-align: left;
+  margin-left: 60px;
+}
+
+.content h4 {
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.content p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+}
+
+/* YEAR DOT */
+.dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  background: #020617;
+  border: 3px solid #38bdf8;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e5e7eb;
+  font-size: 0.75rem;
+}
+
+/* CURRENT YEAR */
+.dot.current {
+  background: #38bdf8;
+  color: #020617;
+  box-shadow: 0 0 25px #38bdf8;
+}
+
+/* BADGE */
+.badge {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 4px 10px;
+  background: #38bdf8;
+  color: #020617;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .timeline::before {
+    left: 10px;
+  }
+
+  .timeline-row {
+    justify-content: flex-start;
+  }
+
+  .content {
+    margin-left: 40px !important;
+    width: calc(100% - 60px);
+    text-align: left !important;
+  }
+
+  .dot {
+    left: 10px;
+    transform: none;
+  }
+}
+.achievements-section {
+  min-height: 200vh;
+}
+/* =================================================
+   RED THEME STYLES
+================================================= */
+body.red-theme .section-title {
+  color: #ef4444;
+}
+
+body.red-theme .timeline::before {
+  background: #ef4444;
+}
+
+body.red-theme .content h4 {
+  color: #ef4444;
+}
+
+body.red-theme .dot {
+  border-color: #ef4444;
+}
+
+body.red-theme .dot.current {
+  background: #ef4444;
+  box-shadow: 0 0 25px #ef4444;
+}
+
+body.red-theme .badge {
+  background: #ef4444;
+}

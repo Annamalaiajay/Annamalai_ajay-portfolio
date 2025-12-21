@@ -1,0 +1,230 @@
+.project-card {
+  width: 320px;
+  height: 220px;
+  perspective: 1200px;
+}
+
+.project-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+
+.project-card:hover .project-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* FRONT */
+.project-card-front,
+.project-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  backface-visibility: hidden;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+
+/* FRONT SIDE */
+.project-card-front {
+  background: #0f172a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-front img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.project-card-front h3 {
+  margin: 12px 0;
+  color: #e5e7eb;
+}
+
+/* BACK SIDE */
+.project-card-back {
+  background: linear-gradient(135deg, #020617, #0f172a);
+  color: #e5e7eb;
+  transform: rotateY(180deg);
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #38bdf8 transparent;
+}
+
+.project-card-back::-webkit-scrollbar {
+  width: 4px;
+}
+
+.project-card-back::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.project-card-back::-webkit-scrollbar-thumb {
+  background: #38bdf8;
+  border-radius: 2px;
+}
+
+.project-card-back::-webkit-scrollbar-thumb:hover {
+  background: #60d5fa;
+}
+
+.project-card-back h3 {
+  margin-bottom: 20px;
+  color: #38bdf8;
+}
+
+.tech-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+
+.tech-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tech-icon {
+  font-size: 2.2rem;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.tech-icon:hover {
+  transform: scale(1.15);
+}
+
+.tech-tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.tech-icon-wrapper:hover .tech-tooltip {
+  opacity: 1;
+}
+
+.project-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.project-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.github-btn {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+.github-btn:hover {
+  background: #555;
+  transform: translateY(-2px);
+}
+
+.live-btn {
+  background: #38bdf8;
+  color: #020617;
+  border-color: #38bdf8;
+}
+
+.live-btn:hover {
+  background: #60d5fa;
+  transform: translateY(-2px);
+}
+
+/* RED THEME */
+body.red-theme .project-card-back h3 {
+  color: #ef4444;
+}
+
+body.red-theme .project-card-back::-webkit-scrollbar-thumb {
+  background: #ef4444;
+}
+
+body.red-theme .project-card-back::-webkit-scrollbar-thumb:hover {
+  background: #f87171;
+}
+
+body.red-theme .project-card-back {
+  scrollbar-color: #ef4444 transparent;
+}
+
+body.red-theme .live-btn {
+  background: #ef4444;
+  border-color: #ef4444;
+}
+
+body.red-theme .live-btn:hover {
+  background: #f87171;
+}
+
+/* PURPLE THEME */
+body.purple-theme .project-card-back h3 {
+  color: #a855f7;
+}
+
+body.purple-theme .project-card-back::-webkit-scrollbar-thumb {
+  background: #a855f7;
+}
+
+body.purple-theme .project-card-back::-webkit-scrollbar-thumb:hover {
+  background: #9333ea;
+}
+
+body.purple-theme .project-card-back {
+  scrollbar-color: #a855f7 transparent;
+}
+
+body.purple-theme .live-btn {
+  background: #a855f7;
+  border-color: #a855f7;
+}
+
+body.purple-theme .live-btn:hover {
+  background: #9333ea;
+}
+
+.project-card-back ul {
+  list-style: none;
+  padding: 0;
+}
+
+.project-card-back li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}

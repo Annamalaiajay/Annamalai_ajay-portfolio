@@ -1,0 +1,316 @@
+/* ===============================
+   ACHIEVEMENTS SECTION
+================================ */
+
+.achievements-section {
+  padding: 20px 40px;
+  position: relative;
+  overflow-x: auto;
+}
+
+.achievements-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: none;
+  width: 100%;
+  gap: 300px;
+}
+
+.achievements-column {
+  flex: 0 0 500px;
+}
+
+.courses-column {
+  flex: 0 0 400px;
+}
+
+.column-title {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-left: 20px;
+  font-weight: 600;
+  position: relative;
+  display: inline-block;
+}
+
+.column-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: #38bdf8;
+  transition: width 0.6s ease;
+}
+
+.column-title:hover::after {
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #38bdf8;
+  margin-bottom: 70px;
+}
+
+/* ===============================
+   TIMELINE LAYOUT
+================================ */
+
+.timeline-grid {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* YEAR BLOCK */
+.year-block {
+  margin-bottom: 70px;
+}
+
+.year-label {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #e5e7eb;
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+/* ===============================
+   TIMELINE ROW
+================================ */
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 80px 40px 1fr;
+  align-items: center;
+  margin-bottom: 36px;
+  position: relative;
+}
+
+.timeline-row.course-row {
+  grid-template-columns: 1fr 40px 80px;
+}
+
+/* MONTH (LEFT FOR ACHIEVEMENTS, RIGHT FOR COURSES) */
+.month {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  padding-right: 10px;
+}
+
+.course-month {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 0;
+}
+
+/* ===============================
+   DOT + CONNECTORS
+================================ */
+
+.line-dot {
+  position: relative;
+  width: 12px;
+  height: 12px;
+  background: #38bdf8;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.connector-line {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 2px;
+  height: 48px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #38bdf8,
+    #38bdf8 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ===============================
+   ACHIEVEMENT CARD
+================================ */
+
+.achievement-card {
+  background: #020617;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+}
+
+.achievement-card h4 {
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.achievement-card small {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.achievement-card p {
+  margin-top: 8px;
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.course-card {
+  background: #020617;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
+  border-left: 4px solid #38bdf8;
+}
+
+.course-card h4 {
+  color: #38bdf8;
+  margin-bottom: 6px;
+}
+
+.course-card .platform {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.1);
+  color: #38bdf8;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  margin-bottom: 6px;
+}
+
+.course-card small {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 900px) {
+  .achievements-container {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ===============================
+   CURRENT / ACTIVE ACHIEVEMENT
+================================ */
+
+.timeline-row.current .line-dot {
+  background: #38bdf8;
+  box-shadow: 0 0 18px #38bdf8;
+}
+
+.timeline-row.current .achievement-card {
+  border: 2px solid #38bdf8;
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 900px) {
+  .timeline-row {
+    grid-template-columns: 1fr;
+  }
+/* remove top dotted line for first item of year */
+.timeline-row.first .line-dot::before {
+  display: none;
+}
+
+  .line-dot,
+  .line-dot::before,
+  .line-dot::after {
+    display: none;
+  }
+
+  .month {
+    text-align: left;
+    margin-bottom: 6px;
+  }
+}
+/* =================================================
+   RED THEME STYLES
+================================================= */
+body.red-theme .section-title {
+  color: #ef4444;
+}
+
+body.red-theme .line-dot {
+  background: #ef4444;
+}
+
+body.red-theme .connector-line {
+  background: repeating-linear-gradient(
+    to bottom,
+    #ef4444,
+    #ef4444 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+body.red-theme .achievement-card h4 {
+  color: #ef4444;
+}
+
+body.red-theme .timeline-row.current .line-dot {
+  background: #ef4444;
+  box-shadow: 0 0 18px #ef4444;
+}
+
+body.red-theme .timeline-row.current .achievement-card {
+  border-color: #ef4444;
+}
+/* RED THEME - NEW ELEMENTS */
+body.red-theme .column-title {
+  color: #ef4444;
+}
+
+body.red-theme .course-card {
+  border-left-color: #ef4444;
+}
+
+body.red-theme .course-card h4,
+body.red-theme .course-card .platform {
+  color: #ef4444;
+}
+
+body.red-theme .course-card .platform {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* PURPLE THEME - NEW ELEMENTS */
+body.purple-theme .column-title {
+  color: #a855f7;
+}
+
+body.purple-theme .course-card {
+  border-left-color: #a855f7;
+}
+
+body.purple-theme .course-card h4,
+body.purple-theme .course-card .platform {
+  color: #a855f7;
+}
+
+body.purple-theme .course-card .platform {
+  background: rgba(168, 85, 247, 0.1);
+}
+
+body.red-theme .column-title::after {
+  background: #ef4444;
+}
+
+body.purple-theme .column-title::after {
+  background: #a855f7;
+}
