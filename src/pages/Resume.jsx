@@ -1,22 +1,13 @@
 import { motion } from "framer-motion";
 import { useEffect } from "react";
 import "../styles/Resume.css";
-import resumePDF from "../assets/ANNAMALAIAJAYML.pdf";
+// import resumePDF from "../assets/ANNAMALAIAJAYML.pdf";
 
 export default function Resume() {
-  useEffect(() => {
-    // Auto-download resume when page loads
-    const link = document.createElement('a');
-    link.href = resumePDF;
-    link.download = 'ANNAMALAIAJAYML.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  }, []);
-
   const handleDownload = () => {
+    // Create a link to download the resume
     const link = document.createElement('a');
-    link.href = resumePDF;
+    link.href = '/ANNAMALAIAJAYML.pdf';
     link.download = 'ANNAMALAIAJAYML.pdf';
     document.body.appendChild(link);
     link.click();
