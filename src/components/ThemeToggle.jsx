@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import "./ThemeToggle.css";
 
+const themes = [
+  { name: 'NIGHT-BLUE', class: 'blue-theme' },
+  { name: 'DARK-FIRE', class: 'red-theme' },
+  { name: 'FORTUNE-BLACK', class: 'purple-theme' }
+];
+
 export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
     return saved ? parseInt(saved) : 0;
   });
   const [showDropdown, setShowDropdown] = useState(false);
-  
-  const themes = [
-    { name: 'NIGHT-BLUE', class: 'blue-theme' },
-    { name: 'DARK-FIRE', class: 'red-theme' },
-    { name: 'FORTUNE-BLACK', class: 'purple-theme' }
-  ];
 
   useEffect(() => {
     document.body.classList.remove('blue-theme', 'red-theme', 'purple-theme');

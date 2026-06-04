@@ -1,11 +1,17 @@
-import "../components/Projectcard.css";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import "../components/ProjectCard.css";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   FaReact,
   FaHtml5,
   FaCss3Alt,
   FaJs,
-  FaPython
+  FaPython,
+  FaCalendarAlt,
+  FaClock,
+  FaMapMarkerAlt,
+  FaDownload,
+  FaBriefcase
 } from "react-icons/fa";
 import {
   SiVite,
@@ -19,8 +25,11 @@ import { IoLogoIonic } from "react-icons/io";
 // add more images when needed
 import portfolioimg from "../assets/Portfolio.png";
 import hackathonImg from "../assets/pastrypantry.png"; // placeholder - replace with actual image
+import offerLetter from "../assets/ANNAMALAI AJAY D (1).pdf";
 
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState("projects");
+
   return (
     <motion.div 
       className="projects-page"
@@ -36,16 +45,51 @@ export default function Projects() {
         transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
         viewport={{ once: true }}
       >
-        PROJECTS
+        EXPERIENCE
       </motion.h2>
 
-      <motion.div 
-        className="projects-grid"
-        initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}
-        viewport={{ once: true }}
-      >
+      {/* Tabs Selector */}
+      <div className="experience-tabs-container">
+        <div className="experience-tabs">
+          <button 
+            className={`tab-btn ${activeTab === "projects" ? "active" : ""}`}
+            onClick={() => setActiveTab("projects")}
+          >
+            PROJECTS
+            {activeTab === "projects" && (
+              <motion.div 
+                className="active-tab-indicator" 
+                layoutId="activeTabIndicator"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === "internships" ? "active" : ""}`}
+            onClick={() => setActiveTab("internships")}
+          >
+            INTERNSHIPS
+            {activeTab === "internships" && (
+              <motion.div 
+                className="active-tab-indicator" 
+                layoutId="activeTabIndicator"
+                transition={{ type: "spring", stiffness: 380, damping: 30 }}
+              />
+            )}
+          </button>
+        </div>
+      </div>
+
+      <AnimatePresence mode="wait">
+        {activeTab === "projects" ? (
+          <motion.div 
+            key="projects-grid"
+            className="projects-grid"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
         {/* PROJECT 1 */}
         <ProjectCard
           image={portfolioimg}
@@ -101,7 +145,29 @@ export default function Projects() {
           githubLink="https://github.com/Annamalaiajay"
           liveLink="#"
         />
-      </motion.div>
+          </motion.div>
+        ) : (
+          <motion.div 
+            key="internships-content"
+            className="internships-content"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="internships-grid">
+              <InternshipCard
+                company="AISHWI TECHNOLOGY COMPANY"
+                position="Data Analyst Intern"
+                startDate="21th July 2025"
+                duration="3 months"
+                workMode="Remote"
+                offerLetterLink={offerLetter}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -140,6 +206,51 @@ function ProjectCard({ image, title, techIcons, githubLink, liveLink }) {
               Live
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ============================
+   INTERNSHIP CARD COMPONENT
+============================ */
+function InternshipCard({ company, position, startDate, duration, workMode, offerLetterLink }) {
+  return (
+    <div className="internship-card">
+      <div className="internship-card-inner">
+        <div className="internship-badge-icon">
+          <FaBriefcase />
+        </div>
+        <div className="internship-details">
+          <h3 className="company-name">{company}</h3>
+          <h4 className="position-title">{position}</h4>
+          
+          <div className="internship-meta-grid">
+            <div className="meta-item">
+              <FaCalendarAlt className="meta-icon" />
+              <span>{startDate}</span>
+            </div>
+            <div className="meta-item">
+              <FaClock className="meta-icon" />
+              <span>{duration}</span>
+            </div>
+            <div className="meta-item">
+              <FaMapMarkerAlt className="meta-icon" />
+              <span>{workMode}</span>
+            </div>
+          </div>
+          
+          {offerLetterLink && (
+            <a 
+              href={offerLetterLink} 
+              download="Annamalai_Ajay_D_Offer_Letter.pdf" 
+              className="download-offer-btn"
+            >
+              <FaDownload className="download-icon" />
+              <span>Download Offer Letter</span>
+            </a>
+          )}
         </div>
       </div>
     </div>

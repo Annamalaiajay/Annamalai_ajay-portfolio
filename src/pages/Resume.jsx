@@ -1,14 +1,13 @@
 import { motion } from "framer-motion";
-import { useEffect } from "react";
 import "../styles/Resume.css";
-// import resumePDF from "../assets/ANNAMALAIAJAYML.pdf";
+import resumePDF from "../assets/Annamalai_Ajay_D_Resume_DATAENG.pdf";
 
 export default function Resume() {
   const handleDownload = () => {
     // Create a link to download the resume
     const link = document.createElement('a');
-    link.href = '/ANNAMALAIAJAYML.pdf';
-    link.download = 'ANNAMALAIAJAYML.pdf';
+    link.href = resumePDF;
+    link.download = 'resume.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

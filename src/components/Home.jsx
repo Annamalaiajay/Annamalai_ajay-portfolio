@@ -1,12 +1,74 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { useState, useRef, useEffect } from "react";
 import homeImg from "../assets/home-img.png";
 
 export default function Home() {
   const navigate = useNavigate();
+  const [fillPercentage, setFillPercentage] = useState(0);
+  const [viewCount, setViewCount] = useState(0);
+  const buttonRef = useRef(null);
+
+  useEffect(() => {
+    const hasVisited = localStorage.getItem('portfolio-visited');
+    const apiEndpoint = hasVisited
+      ? 'https://abacus.jasoncameron.dev/get/ajay-portfolio/views_v2'
+      : 'https://abacus.jasoncameron.dev/hit/ajay-portfolio/views_v2';
+
+    fetch(apiEndpoint)
+      .then(res => res.json())
+      .then(data => {
+        if (data && typeof data.value === 'number') {
+          setViewCount(50 + data.value);
+          if (!hasVisited) {
+            localStorage.setItem('portfolio-visited', 'true');
+          }
+        } else {
+          setViewCount(50);
+        }
+      })
+      .catch(err => {
+        console.error('Error fetching view count:', err);
+        setViewCount(50);
+      });
+  }, []);
+
+  const handleMouseMove = (e) => {
+    if (buttonRef.current) {
+      const rect = buttonRef.current.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const percentage = Math.min(Math.max((x / rect.width) * 100, 0), 100);
+      setFillPercentage(percentage);
+      buttonRef.current.style.setProperty('--fill-width', `${percentage}%`);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setFillPercentage(0);
+    if (buttonRef.current) {
+      buttonRef.current.style.setProperty('--fill-width', '0%');
+    }
+  };
+
+  const handleClick = () => {
+    navigate("/about");
+  };
 
   return (
     <div className="home-page">
+      {/* VIEW COUNTER */}
+      <motion.div
+        className="view-counter"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
+        </svg>
+        <span>{viewCount.toLocaleString()}</span>
+      </motion.div>
+
       <motion.div
         className="home-wrapper"
         initial={{ opacity: 0 }}
@@ -36,17 +98,24 @@ export default function Home() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            AI ML | FULL STACK | EMBEDDED | IOT
+            AI ML | FULL STACK | EMBEDDED | IOT | DATA ANALYTICS
           </motion.p>
 
           <motion.button
+            ref={buttonRef}
             className="arrow-btn"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7 }}
-            onClick={() => navigate("/about")}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onClick={handleClick}
+            style={{ '--fill-width': '0%' }}
           >
-            View Portfolio →
+            <div className="arrow-btn-content">
+              <span className="arrow-btn-percentage">{Math.round(fillPercentage)}%</span>
+              <span>PORTFOLIO</span>
+            </div>
           </motion.button>
 
           {/* SOCIAL LINKS */}
