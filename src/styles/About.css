@@ -201,19 +201,57 @@ body.purple-theme .code-summary-box {
   }
 }
 
-/* LEETCODE ROTATING BADGES */
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
+/* LEETCODE 3D SPINNING BADGES */
+@keyframes spin3d {
+  0% {
+    transform: rotateY(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    transform: rotateY(360deg);
   }
 }
 
-.rotating-badge {
-  animation: spin-slow 20s linear infinite;
-  transform-origin: 50px 50px;
+.leetcode-badge-3d {
+  width: 75px;
+  height: 75px;
+  perspective: 600px;
+  flex-shrink: 0;
+}
+
+.badge-3d-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: spin3d 12s linear infinite;
+  transition: transform 0.6s ease;
+}
+
+.leetcode-badge-container:hover .badge-3d-inner {
+  animation-duration: 4s; /* spins faster on hover */
+}
+
+.badge-3d-front,
+.badge-3d-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.badge-3d-front {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.badge-3d-back {
+  transform: rotateY(180deg);
 }
 
 .leetcode-badges-wrapper {
@@ -260,10 +298,6 @@ body.purple-theme .code-summary-box {
   border-color: rgba(59, 130, 246, 0.4);
   background: rgba(59, 130, 246, 0.08);
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
-}
-
-.leetcode-badge-container:hover .rotating-badge {
-  animation-duration: 6s; /* spins faster on hover */
 }
 
 .leetcode-badge-svg {
