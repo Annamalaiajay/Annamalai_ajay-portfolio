@@ -266,38 +266,15 @@ body.purple-theme .code-summary-box {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  backdrop-filter: blur(5px);
+  padding: 4px 8px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
   transition: all 0.3s ease;
 }
 
-.leetcode-badge-container.badge-50 {
-  background: rgba(34, 197, 94, 0.04);
-  border: 1px solid rgba(34, 197, 94, 0.15);
-  border-left: 4px solid #22c55e;
-  box-shadow: 0 0 15px rgba(34, 197, 94, 0.05);
-}
-
-.leetcode-badge-container.badge-50:hover {
+.leetcode-badge-container:hover {
   transform: translateY(-5px);
-  border-color: rgba(34, 197, 94, 0.4);
-  background: rgba(34, 197, 94, 0.08);
-  box-shadow: 0 8px 25px rgba(34, 197, 94, 0.15);
-}
-
-.leetcode-badge-container.badge-100 {
-  background: rgba(59, 130, 246, 0.04);
-  border: 1px solid rgba(59, 130, 246, 0.15);
-  border-left: 4px solid #3b82f6;
-  box-shadow: 0 0 15px rgba(59, 130, 246, 0.05);
-}
-
-.leetcode-badge-container.badge-100:hover {
-  transform: translateY(-5px);
-  border-color: rgba(59, 130, 246, 0.4);
-  background: rgba(59, 130, 246, 0.08);
-  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
 }
 
 .leetcode-badge-svg {
