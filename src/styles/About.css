@@ -211,8 +211,8 @@ body.purple-theme .code-summary-box {
   }
 }
 
-.rotating-ring {
-  animation: spin-slow 15s linear infinite;
+.rotating-badge {
+  animation: spin-slow 20s linear infinite;
   transform-origin: 50px 50px;
 }
 
@@ -262,8 +262,8 @@ body.purple-theme .code-summary-box {
   box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
 }
 
-.leetcode-badge-container:hover .rotating-ring {
-  animation-duration: 5s; /* spins faster on hover */
+.leetcode-badge-container:hover .rotating-badge {
+  animation-duration: 6s; /* spins faster on hover */
 }
 
 .leetcode-badge-svg {
