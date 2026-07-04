@@ -157,8 +157,19 @@ body {
 
 .home-right img {
   width: 320px;
-  border-radius: 18px;
+  height: 320px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 20%;
+  border: 4px solid rgba(108, 207, 255, 0.2);
   box-shadow: 0 0 45px rgba(108, 207, 255, 0.35);
+  transition: all 0.3s ease;
+}
+
+.home-right img:hover {
+  transform: scale(1.03);
+  border-color: rgba(108, 207, 255, 0.5);
+  box-shadow: 0 0 55px rgba(108, 207, 255, 0.5);
 }
 
 /* =================================================
@@ -490,7 +501,13 @@ body.red-theme .arrow-btn::before {
 }
 
 body.red-theme .home-right img {
+  border-color: rgba(239, 68, 68, 0.2);
   box-shadow: 0 0 45px rgba(239, 68, 68, 0.35);
+}
+
+body.red-theme .home-right img:hover {
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 55px rgba(239, 68, 68, 0.5);
 }
 
 body.red-theme .portfolio-nav {
@@ -725,7 +742,13 @@ body.purple-theme .arrow-btn::before {
 }
 
 body.purple-theme .home-right img {
+  border-color: rgba(168, 85, 247, 0.2);
   box-shadow: 0 0 45px rgba(168, 85, 247, 0.35);
+}
+
+body.purple-theme .home-right img:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 0 55px rgba(168, 85, 247, 0.5);
 }
 
 body.purple-theme .portfolio-nav {
