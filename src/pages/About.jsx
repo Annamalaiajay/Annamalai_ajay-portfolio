@@ -58,31 +58,108 @@ export default function About() {
             <p>@Annamalai_aajay</p>
           </div>
 
-          {/* ROTATING BADGE */}
-          <div className="leetcode-badge-container">
-            <svg className="leetcode-badge-svg" viewBox="0 0 100 100" width="75" height="75">
-              <g className="rotating-ring">
-                <circle cx="50" cy="50" r="44" fill="none" stroke="#ffa116" strokeWidth="2.5" strokeDasharray="6 4" />
-                <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(255, 161, 22, 0.4)" strokeWidth="1" strokeDasharray="3 3" />
-                {[...Array(8)].map((_, i) => (
-                  <circle
-                    key={i}
-                    cx={50 + 44 * Math.cos((i * Math.PI) / 4)}
-                    cy={50 + 44 * Math.sin((i * Math.PI) / 4)}
-                    r="2.5"
-                    fill="#ffa116"
-                  />
-                ))}
-              </g>
-              <circle cx="50" cy="50" r="32" fill="#1e1e1e" stroke="#ffa116" strokeWidth="2" />
-              <circle cx="50" cy="50" r="27" fill="rgba(255, 161, 22, 0.15)" />
-              <text x="50" y="44" textAnchor="middle" fill="#ffa116" fontSize="16" fontWeight="900" fontFamily="sans-serif">50</text>
-              <text x="50" y="56" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="700" fontFamily="sans-serif" letterSpacing="0.5">DAYS</text>
-              <text x="50" y="66" textAnchor="middle" fill="#ffa116" fontSize="6" fontWeight="700" fontFamily="sans-serif" letterSpacing="1">BADGE</text>
-            </svg>
-            <div className="leetcode-badge-info">
-              <span className="leetcode-badge-title">50 DAYS STREAK</span>
-              <span className="leetcode-badge-subtitle">LeetCode Consistent Solver</span>
+          {/* ROTATING BADGES */}
+          <div className="leetcode-badges-wrapper">
+            {/* 50 DAYS BADGE */}
+            <div className="leetcode-badge-container badge-50">
+              <svg className="leetcode-badge-svg" viewBox="0 0 100 100" width="75" height="75">
+                <g className="rotating-ring">
+                  <circle cx="50" cy="50" r="44" fill="none" stroke="#22c55e" strokeWidth="2.5" strokeDasharray="6 4" />
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(34, 197, 94, 0.4)" strokeWidth="1" strokeDasharray="3 3" />
+                  {[...Array(8)].map((_, i) => (
+                    <circle
+                      key={i}
+                      cx={50 + 44 * Math.cos((i * Math.PI) / 4)}
+                      cy={50 + 44 * Math.sin((i * Math.PI) / 4)}
+                      r="2.5"
+                      fill="#22c55e"
+                    />
+                  ))}
+                </g>
+                <defs>
+                  <linearGradient id="silverGradient50" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#e5e7eb" />
+                    <stop offset="50%" stopColor="#9ca3af" />
+                    <stop offset="100%" stopColor="#374151" />
+                  </linearGradient>
+                  <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#4ade80" />
+                    <stop offset="100%" stopColor="#15803d" />
+                  </linearGradient>
+                </defs>
+                <path 
+                  d="M50 18 L77.7 34 L77.7 66 L50 82 L22.3 66 L22.3 34 Z" 
+                  fill="#111827" 
+                  stroke="url(#silverGradient50)" 
+                  strokeWidth="3.5" 
+                  strokeLinejoin="round" 
+                />
+                <circle cx="62" cy="50" r="18" fill="url(#greenGradient)" opacity="0.9" />
+                <circle cx="62" cy="50" r="18" fill="none" stroke="#4ade80" strokeWidth="1.5" />
+                <text x="38" y="58" textAnchor="middle" fill="#f3f4f6" fontSize="26" fontWeight="800" fontFamily="system-ui, sans-serif">5</text>
+                <text x="62" y="58" textAnchor="middle" fill="#111827" fontSize="26" fontWeight="900" fontFamily="system-ui, sans-serif">0</text>
+                <g transform="translate(29, 44)">
+                  <text x="0" y="0" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">D</text>
+                  <text x="0" y="5" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">A</text>
+                  <text x="0" y="10" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">Y</text>
+                  <text x="0" y="15" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">S</text>
+                </g>
+              </svg>
+              <div className="leetcode-badge-info">
+                <span className="leetcode-badge-title">50 DAYS STREAK</span>
+                <span className="leetcode-badge-subtitle">LeetCode Consistent</span>
+              </div>
+            </div>
+
+            {/* 100 DAYS BADGE */}
+            <div className="leetcode-badge-container badge-100">
+              <svg className="leetcode-badge-svg" viewBox="0 0 100 100" width="75" height="75">
+                <g className="rotating-ring">
+                  <circle cx="50" cy="50" r="44" fill="none" stroke="#3b82f6" strokeWidth="2.5" strokeDasharray="6 4" />
+                  <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(59, 130, 246, 0.4)" strokeWidth="1" strokeDasharray="3 3" />
+                  {[...Array(8)].map((_, i) => (
+                    <circle
+                      key={i}
+                      cx={50 + 44 * Math.cos((i * Math.PI) / 4)}
+                      cy={50 + 44 * Math.sin((i * Math.PI) / 4)}
+                      r="2.5"
+                      fill="#3b82f6"
+                    />
+                  ))}
+                </g>
+                <defs>
+                  <linearGradient id="silverGradient100" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#e5e7eb" />
+                    <stop offset="50%" stopColor="#9ca3af" />
+                    <stop offset="100%" stopColor="#374151" />
+                  </linearGradient>
+                  <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#60a5fa" />
+                    <stop offset="100%" stopColor="#1d4ed8" />
+                  </linearGradient>
+                </defs>
+                <path 
+                  d="M50 18 L77.7 34 L77.7 66 L50 82 L22.3 66 L22.3 34 Z" 
+                  fill="#111827" 
+                  stroke="url(#silverGradient100)" 
+                  strokeWidth="3.5" 
+                  strokeLinejoin="round" 
+                />
+                <circle cx="62" cy="50" r="18" fill="url(#blueGradient)" opacity="0.9" />
+                <circle cx="62" cy="50" r="18" fill="none" stroke="#60a5fa" strokeWidth="1.5" />
+                <text x="35" y="58" textAnchor="middle" fill="#f3f4f6" fontSize="20" fontWeight="800" fontFamily="system-ui, sans-serif">10</text>
+                <text x="62" y="58" textAnchor="middle" fill="#111827" fontSize="22" fontWeight="900" fontFamily="system-ui, sans-serif">0</text>
+                <g transform="translate(29, 44)">
+                  <text x="0" y="0" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">D</text>
+                  <text x="0" y="5" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">A</text>
+                  <text x="0" y="10" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">Y</text>
+                  <text x="0" y="15" textAnchor="middle" fill="#9ca3af" fontSize="4.5" fontWeight="800" letterSpacing="0.5">S</text>
+                </g>
+              </svg>
+              <div className="leetcode-badge-info">
+                <span className="leetcode-badge-title">100 DAYS STREAK</span>
+                <span className="leetcode-badge-subtitle">LeetCode Consistent</span>
+              </div>
             </div>
           </div>
         </div>
