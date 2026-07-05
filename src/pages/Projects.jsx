@@ -25,7 +25,6 @@ import { IoLogoIonic } from "react-icons/io";
 // add more images when needed
 import portfolioimg from "../assets/Portfolio.png";
 import hackathonImg from "../assets/pastrypantry.png"; // placeholder - replace with actual image
-import roverImg from "../assets/rover.png";
 import offerLetter from "../assets/ANNAMALAI AJAY D (1).pdf";
 
 export default function Projects() {
