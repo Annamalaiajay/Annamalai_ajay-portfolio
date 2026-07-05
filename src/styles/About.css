@@ -1,5 +1,6 @@
 /* ABOUT PAGE STYLES */
 .about-section {
+  --accent-color: var(--theme-accent);
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;

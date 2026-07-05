@@ -25,6 +25,7 @@ import { IoLogoIonic } from "react-icons/io";
 // add more images when needed
 import portfolioimg from "../assets/Portfolio.png";
 import hackathonImg from "../assets/pastrypantry.png"; // placeholder - replace with actual image
+import roverImg from "../assets/rover.png";
 import offerLetter from "../assets/ANNAMALAI AJAY D (1).pdf";
 
 export default function Projects() {
@@ -90,6 +91,18 @@ export default function Projects() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.4 }}
           >
+        {/* ROVER PROJECT */}
+        <ProjectCard
+          title="Self-Recognizing Rover"
+          techIcons={[
+            { icon: <IoLogoIonic />, color: "#3880FF", name: "IoT" },
+            { icon: <FaPython />, color: "#3776AB", name: "Python" },
+            { icon: <SiEspressif />, color: "#E7352C", name: "ESP32" }
+          ]}
+          isDevelopment={true}
+          dmLink="https://www.linkedin.com/in/annamalai-ajay-8888a6283/"
+        />
+
         {/* PROJECT 1 */}
         <ProjectCard
           image={portfolioimg}
@@ -175,14 +188,25 @@ export default function Projects() {
 /* =========================
    PROJECT CARD COMPONENT
 ========================= */
-function ProjectCard({ image, title, techIcons, githubLink, liveLink }) {
+function ProjectCard({ image, title, techIcons, githubLink, liveLink, isDevelopment, dmLink }) {
   return (
     <div className="project-card">
       <div className="project-card-inner">
         {/* FRONT SIDE */}
         <div className="project-card-front">
-          <img src={image} alt={title} />
-          <h3>{title}</h3>
+          {image ? (
+            <>
+              <img src={image} alt={title} />
+              <h3>{title}</h3>
+            </>
+          ) : (
+            <div className="project-card-no-img-content">
+              <h3>{title}</h3>
+            </div>
+          )}
+          {isDevelopment && (
+            <div className="dev-badge">Under Development</div>
+          )}
         </div>
 
         {/* BACK SIDE */}
@@ -199,12 +223,20 @@ function ProjectCard({ image, title, techIcons, githubLink, liveLink }) {
             ))}
           </div>
           <div className="project-buttons">
-            <a href={githubLink} target="_blank" rel="noopener noreferrer" className="project-btn github-btn">
-              GitHub
-            </a>
-            <a href={liveLink} target="_blank" rel="noopener noreferrer" className="project-btn live-btn">
-              Live
-            </a>
+            {isDevelopment ? (
+              <a href={dmLink} target="_blank" rel="noopener noreferrer" className="project-btn dm-btn">
+                DM for Queries
+              </a>
+            ) : (
+              <>
+                <a href={githubLink} target="_blank" rel="noopener noreferrer" className="project-btn github-btn">
+                  GitHub
+                </a>
+                <a href={liveLink} target="_blank" rel="noopener noreferrer" className="project-btn live-btn">
+                  Live
+                </a>
+              </>
+            )}
           </div>
         </div>
       </div>

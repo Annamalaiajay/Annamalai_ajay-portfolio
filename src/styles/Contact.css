@@ -238,18 +238,49 @@ body.red-theme .social-links a:hover {
   min-height: 350px;
 }
 
-.success-icon {
-  font-size: 3.5rem;
-  animation: floatEmoji 3s ease-in-out infinite;
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+.success-svg-icon {
+  width: 70px;
+  height: 70px;
+  color: #38bdf8;
+  filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
+  margin: 0 auto;
 }
 
-@keyframes floatEmoji {
-  0%, 100% {
-    transform: translateY(0) scale(1);
+body.red-theme .success-svg-icon {
+  color: #ef4444;
+  filter: drop-shadow(0 0 15px rgba(239, 68, 68, 0.4));
+}
+
+body.purple-theme .success-svg-icon {
+  color: #a855f7;
+  filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.4));
+}
+
+.success-circle {
+  stroke: currentColor;
+  stroke-opacity: 0.2;
+  stroke-dasharray: 166;
+  stroke-dashoffset: 166;
+  animation: drawCircle 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.success-check {
+  stroke: currentColor;
+  stroke-dasharray: 48;
+  stroke-dashoffset: 48;
+  animation: drawCheck 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.4s forwards;
+}
+
+@keyframes drawCircle {
+  to {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
   }
-  50% {
-    transform: translateY(-10px) scale(1.05);
+}
+
+@keyframes drawCheck {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 

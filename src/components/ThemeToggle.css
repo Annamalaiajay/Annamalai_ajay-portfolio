@@ -8,7 +8,7 @@
 .theme-toggle-btn {
   width: 50px;
   height: 50px;
-  background: #38bdf8;
+  background: var(--theme-accent);
   border: none;
   border-radius: 50%;
   display: flex;
@@ -16,14 +16,14 @@
   justify-content: center;
   color: #020617;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+  box-shadow: 0 4px 15px rgba(var(--theme-accent-rgb), 0.3);
   transition: all 0.3s ease;
 }
 
 .theme-toggle-btn:hover {
-  background: #60d5fa;
+  filter: brightness(1.15);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+  box-shadow: 0 6px 20px rgba(var(--theme-accent-rgb), 0.4);
 }
 
 .theme-dropdown {
@@ -31,7 +31,7 @@
   top: 60px;
   right: 0;
   background: #020617;
-  border: 1px solid #38bdf8;
+  border: 1px solid var(--theme-accent);
   border-radius: 12px;
   padding: 8px;
   min-width: 150px;
@@ -53,57 +53,11 @@
 }
 
 .theme-option:hover {
-  background: rgba(56, 189, 248, 0.1);
-  color: #38bdf8;
+  background: rgba(var(--theme-accent-rgb), 0.1);
+  color: var(--theme-accent);
 }
 
 .theme-option.active {
-  background: #38bdf8;
+  background: var(--theme-accent);
   color: #020617;
-}
-
-body.red-theme .theme-toggle-btn {
-  background: #ef4444;
-  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
-}
-
-body.red-theme .theme-toggle-btn:hover {
-  background: #f87171;
-  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
-}
-
-body.red-theme .theme-dropdown {
-  border-color: #ef4444;
-}
-
-body.red-theme .theme-option:hover {
-  background: rgba(239, 68, 68, 0.1);
-  color: #ef4444;
-}
-
-body.red-theme .theme-option.active {
-  background: #ef4444;
-}
-
-body.purple-theme .theme-toggle-btn {
-  background: #a855f7;
-  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
-}
-
-body.purple-theme .theme-toggle-btn:hover {
-  background: #9333ea;
-  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
-}
-
-body.purple-theme .theme-dropdown {
-  border-color: #a855f7;
-}
-
-body.purple-theme .theme-option:hover {
-  background: rgba(168, 85, 247, 0.1);
-  color: #a855f7;
-}
-
-body.purple-theme .theme-option.active {
-  background: #a855f7;
 }

@@ -10,7 +10,8 @@ const themes = [
 export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
-    return saved ? parseInt(saved) : 0;
+    const parsed = saved ? parseInt(saved) : 0;
+    return parsed >= 0 && parsed <= 2 ? parsed : 0;
   });
   const [showDropdown, setShowDropdown] = useState(false);
 

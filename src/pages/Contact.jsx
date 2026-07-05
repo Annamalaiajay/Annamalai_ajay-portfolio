@@ -107,7 +107,16 @@ export default function Contact() {
               animate={{ scale: 1, opacity: 1 }}
               transition={{ type: "spring", stiffness: 100 }}
             >
-              <div className="success-icon">✉️🚀</div>
+              <svg
+                className="success-svg-icon"
+                viewBox="0 0 52 52"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="4"
+              >
+                <circle cx="26" cy="26" r="25" className="success-circle" />
+                <path d="M14 27l7 7 16-16" strokeLinecap="round" strokeLinejoin="round" className="success-check" />
+              </svg>
               <h3>Message Sent!</h3>
               <p>
                 Thanks for reaching out, <strong>{senderName}</strong>! Ajay will get back to you as soon as possible.
