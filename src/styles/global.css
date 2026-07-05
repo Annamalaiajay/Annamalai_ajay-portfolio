@@ -21,9 +21,9 @@ body {
 body {
   font-family: Inter, system-ui, sans-serif;
   background:
-    radial-gradient(circle at 20% 30%, rgba(108, 207, 255, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(0, 120, 255, 0.15), transparent 45%),
-    linear-gradient(135deg, #050505, #000000);
+    radial-gradient(circle at 20% 30%, rgba(108, 207, 255, 0.25), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 120, 255, 0.2), transparent 55%),
+    linear-gradient(135deg, #030305, #000000);
   color: #ffffff;
 }
 
@@ -207,25 +207,45 @@ body {
 ================================================= */
 .portfolio-nav {
   position: sticky;
-  top: 0;
-  z-index: 10;
+  top: 20px;
+  z-index: 1000;
   display: flex;
-  gap: 26px;
-  padding: 16px 10%;
-  background: rgba(5, 5, 5, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(108, 207, 255, 0.25);
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 24px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(108, 207, 255, 0.15);
+  border-radius: 50px;
+  max-width: fit-content;
+  margin: 20px auto;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(108, 207, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .portfolio-nav a {
-  color: #dcdcdc;
+  color: #a1a1aa;
   text-decoration: none;
   font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.portfolio-nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .portfolio-nav a.active {
   color: #6ccfff;
-  border-bottom: 2px solid #6ccfff;
+  background: rgba(108, 207, 255, 0.15);
+  box-shadow: 0 0 15px rgba(108, 207, 255, 0.1);
 }
 
 /* =================================================
@@ -462,9 +482,9 @@ body {
 ================================================= */
 body.red-theme {
   background:
-    radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.15), transparent 45%),
-    linear-gradient(135deg, #0f0505, #000000);
+    radial-gradient(circle at 20% 30%, rgba(239, 68, 68, 0.25), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(220, 38, 38, 0.2), transparent 55%),
+    linear-gradient(135deg, #0a0303, #000000);
 }
 
 body.red-theme .view-counter {
@@ -511,12 +531,17 @@ body.red-theme .home-right img:hover {
 }
 
 body.red-theme .portfolio-nav {
-  border-bottom: 1px solid rgba(239, 68, 68, 0.25);
+  border-color: rgba(239, 68, 68, 0.2);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(239, 68, 68, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 body.red-theme .portfolio-nav a.active {
   color: #ef4444;
-  border-bottom-color: #ef4444;
+  background: rgba(239, 68, 68, 0.15);
+  box-shadow: 0 0 15px rgba(239, 68, 68, 0.1);
 }
 
 body.red-theme .skills-title {
@@ -703,9 +728,9 @@ body.red-theme .social-links-home a:hover {
 ================================================= */
 body.purple-theme {
   background:
-    radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 70%, rgba(126, 34, 206, 0.15), transparent 45%),
-    linear-gradient(135deg, #0a0510, #000000);
+    radial-gradient(circle at 20% 30%, rgba(147, 51, 234, 0.25), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(126, 34, 206, 0.2), transparent 55%),
+    linear-gradient(135deg, #08030c, #000000);
 }
 
 body.purple-theme .view-counter {
@@ -752,12 +777,17 @@ body.purple-theme .home-right img:hover {
 }
 
 body.purple-theme .portfolio-nav {
-  border-bottom: 1px solid rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(168, 85, 247, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 body.purple-theme .portfolio-nav a.active {
   color: #a855f7;
-  border-bottom-color: #a855f7;
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: 0 0 15px rgba(168, 85, 247, 0.1);
 }
 
 body.purple-theme .skills-title,
