@@ -25,6 +25,7 @@ import { IoLogoIonic } from "react-icons/io";
 // add more images when needed
 import portfolioimg from "../assets/Portfolio.png";
 import hackathonImg from "../assets/pastrypantry.png"; // placeholder - replace with actual image
+import waysyncImg from "../assets/waysync.jpg";
 import offerLetter from "../assets/ANNAMALAI AJAY D (1).pdf";
 
 export default function Projects() {
@@ -147,15 +148,15 @@ export default function Projects() {
 
         {/* PROJECT 4 */}
         <ProjectCard
-          image={hackathonImg}
+          image={waysyncImg}
           title="Way-Sync – Smart Route App"
           techIcons={[
             { icon: <SiFlutter />, color: "#02569B", name: "Flutter" },
             { icon: <FaPython />, color: "#3776AB", name: "Python" },
             { icon: <SiGooglemaps />, color: "#4285F4", name: "Google Maps" }
           ]}
-          githubLink="https://github.com/Annamalaiajay"
-          liveLink="#"
+          isDevelopment={true}
+          dmLink="https://www.linkedin.com/in/annamalai-ajay-8888a6283/"
         />
           </motion.div>
         ) : (
