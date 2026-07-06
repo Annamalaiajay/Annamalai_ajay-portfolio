@@ -25,7 +25,7 @@ export default function Experience() {
           title="B.E / B.Tech (ECE)"
           school={"Sathyabama university"}
           location={"Chennai"}
-          subtitle="CGPA: 7.7 • Present"
+          subtitle="CGPA: 8.2 • Present"
           isPresent
         />
 
