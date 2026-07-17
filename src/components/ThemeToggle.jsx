@@ -4,19 +4,21 @@ import "./ThemeToggle.css";
 const themes = [
   { name: 'NIGHT-BLUE', class: 'blue-theme' },
   { name: 'DARK-FIRE', class: 'red-theme' },
-  { name: 'FORTUNE-BLACK', class: 'purple-theme' }
+  { name: 'FORTUNE-BLACK', class: 'purple-theme' },
+  { name: 'GLASSY-WHITE', class: 'glassy-white-theme' },
+  { name: 'PREMIUM-BLACK', class: 'premium-black-theme' }
 ];
 
 export default function ThemeToggle() {
   const [currentTheme, setCurrentTheme] = useState(() => {
     const saved = localStorage.getItem('portfolio-theme');
     const parsed = saved ? parseInt(saved) : 0;
-    return parsed >= 0 && parsed <= 2 ? parsed : 0;
+    return parsed >= 0 && parsed < themes.length ? parsed : 0;
   });
   const [showDropdown, setShowDropdown] = useState(false);
 
   useEffect(() => {
-    document.body.classList.remove('blue-theme', 'red-theme', 'purple-theme');
+    themes.forEach(t => document.body.classList.remove(t.class));
     document.body.classList.add(themes[currentTheme].class);
     localStorage.setItem('portfolio-theme', currentTheme.toString());
   }, [currentTheme]);

@@ -227,6 +227,77 @@ body.purple-theme .live-btn:hover {
   background: #9333ea;
 }
 
+/* GLASSY WHITE THEME */
+body.glassy-white-theme .project-card-front {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(99, 102, 241, 0.2);
+  color: #1e293b;
+}
+
+body.glassy-white-theme .project-card-front h3 {
+  color: #1e293b;
+}
+
+body.glassy-white-theme .project-card-back {
+  background: rgba(255, 255, 255, 0.95);
+  color: #334155;
+  border-color: rgba(99, 102, 241, 0.25);
+  scrollbar-color: #4f46e5 transparent;
+}
+
+body.glassy-white-theme .project-card-back h3 {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .project-card-back::-webkit-scrollbar-thumb {
+  background: #4f46e5;
+}
+
+body.glassy-white-theme .project-card-back::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
+body.glassy-white-theme .live-btn {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #ffffff;
+}
+
+body.glassy-white-theme .live-btn:hover {
+  background: #6366f1;
+}
+
+/* PREMIUM BLACK THEME */
+body.premium-black-theme .project-card-front {
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
+body.premium-black-theme .project-card-back h3 {
+  color: #d4af37;
+}
+
+body.premium-black-theme .project-card-back::-webkit-scrollbar-thumb {
+  background: #d4af37;
+}
+
+body.premium-black-theme .project-card-back::-webkit-scrollbar-thumb:hover {
+  background: #f3e5ab;
+}
+
+body.premium-black-theme .project-card-back {
+  scrollbar-color: #d4af37 transparent;
+}
+
+body.premium-black-theme .live-btn {
+  background: #d4af37;
+  border-color: #d4af37;
+  color: #000000;
+}
+
+body.premium-black-theme .live-btn:hover {
+  background: #f3e5ab;
+}
+
 .project-card-back ul {
   list-style: none;
   padding: 0;
@@ -306,6 +377,32 @@ body.purple-theme .active-tab-indicator {
   box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
 }
 
+body.glassy-white-theme .experience-tabs {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .tab-btn {
+  color: #475569;
+}
+
+body.glassy-white-theme .tab-btn.active {
+  color: #ffffff;
+}
+
+body.glassy-white-theme .active-tab-indicator {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.2);
+}
+
+body.premium-black-theme .active-tab-indicator {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
 .internships-content {
   display: flex;
   justify-content: center;
@@ -364,6 +461,22 @@ body.purple-theme .internship-card:hover {
   border-color: rgba(168, 85, 247, 0.4);
 }
 
+body.glassy-white-theme .internship-card {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .internship-card:hover {
+  box-shadow: 0 25px 50px rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+body.premium-black-theme .internship-card:hover {
+  box-shadow: 0 25px 50px rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.4);
+}
+
 .internship-card-inner {
   display: flex;
   gap: 20px;
@@ -408,6 +521,18 @@ body.purple-theme .internship-badge-icon {
   border-color: rgba(168, 85, 247, 0.2);
 }
 
+body.glassy-white-theme .internship-badge-icon {
+  background: rgba(99, 102, 241, 0.08);
+  color: #4f46e5;
+  border-color: rgba(99, 102, 241, 0.2);
+}
+
+body.premium-black-theme .internship-badge-icon {
+  background: rgba(212, 175, 55, 0.1);
+  color: #d4af37;
+  border-color: rgba(212, 175, 55, 0.2);
+}
+
 .internship-details {
   flex-grow: 1;
 }
@@ -433,6 +558,18 @@ body.red-theme .position-title {
 
 body.purple-theme .position-title {
   color: #a855f7;
+}
+
+body.glassy-white-theme .company-name {
+  color: #1e293b;
+}
+
+body.glassy-white-theme .position-title {
+  color: #4f46e5;
+}
+
+body.premium-black-theme .position-title {
+  color: #d4af37;
 }
 
 .internship-meta-grid {
@@ -461,6 +598,18 @@ body.red-theme .meta-icon {
 
 body.purple-theme .meta-icon {
   color: #a855f7;
+}
+
+body.glassy-white-theme .meta-item {
+  color: #475569;
+}
+
+body.glassy-white-theme .meta-icon {
+  color: #4f46e5;
+}
+
+body.premium-black-theme .meta-icon {
+  color: #d4af37;
 }
 
 .download-offer-btn {
@@ -510,6 +659,28 @@ body.purple-theme .download-offer-btn:hover {
   box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
 }
 
+body.glassy-white-theme .download-offer-btn {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
+}
+
+body.glassy-white-theme .download-offer-btn:hover {
+  background: #6366f1;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.3);
+}
+
+body.premium-black-theme .download-offer-btn {
+  background: #d4af37;
+  color: #000000;
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+body.premium-black-theme .download-offer-btn:hover {
+  background: #f3e5ab;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+}
+
 .download-icon {
   font-size: 1.1rem;
 }
@@ -550,6 +721,20 @@ body.purple-theme .dev-badge {
   box-shadow: 0 0 10px rgba(168, 85, 247, 0.2);
 }
 
+body.glassy-white-theme .dev-badge {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.4);
+  color: #4f46e5;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.1);
+}
+
+body.premium-black-theme .dev-badge {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: rgba(212, 175, 55, 0.5);
+  color: #d4af37;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+
 .dm-btn {
   width: 100%;
   max-width: 220px;
@@ -582,6 +767,26 @@ body.purple-theme .dm-btn {
 
 body.purple-theme .dm-btn:hover {
   background: #9333ea;
+}
+
+body.glassy-white-theme .dm-btn {
+  background: #4f46e5;
+  color: #ffffff;
+  border-color: #4f46e5;
+}
+
+body.glassy-white-theme .dm-btn:hover {
+  background: #6366f1;
+}
+
+body.premium-black-theme .dm-btn {
+  background: #d4af37;
+  color: #000000;
+  border-color: #d4af37;
+}
+
+body.premium-black-theme .dm-btn:hover {
+  background: #f3e5ab;
 }
 
 /* =================================================

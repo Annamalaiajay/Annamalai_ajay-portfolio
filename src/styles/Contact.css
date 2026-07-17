@@ -216,6 +216,113 @@ body.red-theme .social-links a:hover {
   box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
 }
 
+/* GLASSY WHITE THEME STYLES */
+body.glassy-white-theme .section-title {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .contact-info h3 {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .contact-info p {
+  color: #475569;
+}
+
+body.glassy-white-theme .info-item p {
+  color: #1e293b;
+}
+
+body.glassy-white-theme .contact-form form {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .contact-form input,
+body.glassy-white-theme .contact-form textarea {
+  background: rgba(255, 255, 255, 0.65);
+  border-color: rgba(99, 102, 241, 0.2);
+  color: #1e293b;
+}
+
+body.glassy-white-theme .contact-form input::placeholder,
+body.glassy-white-theme .contact-form textarea::placeholder {
+  color: #94a3b8;
+}
+
+body.glassy-white-theme .contact-form input:focus,
+body.glassy-white-theme .contact-form textarea:focus {
+  border-color: #4f46e5;
+  background: #ffffff;
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+}
+
+body.glassy-white-theme .contact-form button {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+body.glassy-white-theme .contact-form button:hover {
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+body.glassy-white-theme .social-title {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .social-links a {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: rgba(99, 102, 241, 0.3);
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .social-links a:hover {
+  background: #4f46e5;
+  color: #ffffff;
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.25);
+}
+
+/* PREMIUM BLACK THEME STYLES */
+body.premium-black-theme .section-title {
+  color: #d4af37;
+}
+
+body.premium-black-theme .contact-info h3 {
+  color: #d4af37;
+}
+
+body.premium-black-theme .contact-form input:focus,
+body.premium-black-theme .contact-form textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+body.premium-black-theme .contact-form button {
+  background: #d4af37;
+  color: #000000;
+}
+
+body.premium-black-theme .contact-form button:hover {
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
+}
+
+body.premium-black-theme .social-title {
+  color: #d4af37;
+}
+
+body.premium-black-theme .social-links a {
+  border-color: rgba(212, 175, 55, 0.3);
+  color: #d4af37;
+  background: rgba(212, 175, 55, 0.05);
+}
+
+body.premium-black-theme .social-links a:hover {
+  background: #d4af37;
+  color: #000000;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+}
+
 /* =================================================
    SUCCESS GLASS CARD
 ================================================= */
@@ -254,6 +361,22 @@ body.red-theme .success-svg-icon {
 body.purple-theme .success-svg-icon {
   color: #a855f7;
   filter: drop-shadow(0 0 15px rgba(168, 85, 247, 0.4));
+}
+
+body.glassy-white-theme .success-glass-card {
+  background: rgba(255, 255, 255, 0.55);
+  border-color: rgba(99, 102, 241, 0.15);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .success-svg-icon {
+  color: #4f46e5;
+  filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.3));
+}
+
+body.premium-black-theme .success-svg-icon {
+  color: #d4af37;
+  filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.3));
 }
 
 .success-circle {
@@ -338,4 +461,36 @@ body.purple-theme .send-again-btn {
 
 body.purple-theme .send-again-btn:hover {
   box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* GLASSY WHITE SUCCESS overrides */
+body.glassy-white-theme .success-glass-card h3 {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .success-glass-card p {
+  color: #475569;
+}
+
+body.glassy-white-theme .send-again-btn {
+  background: #4f46e5;
+  color: #ffffff;
+}
+
+body.glassy-white-theme .send-again-btn:hover {
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+}
+
+/* PREMIUM BLACK SUCCESS overrides */
+body.premium-black-theme .success-glass-card h3 {
+  color: #d4af37;
+}
+
+body.premium-black-theme .send-again-btn {
+  background: #d4af37;
+  color: #000000;
+}
+
+body.premium-black-theme .send-again-btn:hover {
+  box-shadow: 0 8px 20px rgba(212, 175, 55, 0.4);
 }

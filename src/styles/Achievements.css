@@ -314,3 +314,58 @@ body.red-theme .column-title::after {
 body.purple-theme .column-title::after {
   background: #a855f7;
 }
+
+/* GLASSY WHITE THEME */
+body.glassy-white-theme .column-title {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .column-title::after {
+  background: #4f46e5;
+}
+
+body.glassy-white-theme .course-card {
+  border-left-color: #4f46e5;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .course-card h4,
+body.glassy-white-theme .course-card .platform {
+  color: #4f46e5;
+}
+
+body.glassy-white-theme .course-card .platform {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+body.glassy-white-theme .achievement-card {
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+body.glassy-white-theme .year-label {
+  color: #1e293b;
+}
+
+/* PREMIUM BLACK THEME */
+body.premium-black-theme .column-title {
+  color: #d4af37;
+}
+
+body.premium-black-theme .column-title::after {
+  background: #d4af37;
+}
+
+body.premium-black-theme .course-card {
+  border-left-color: #d4af37;
+}
+
+body.premium-black-theme .course-card h4,
+body.premium-black-theme .course-card .platform {
+  color: #d4af37;
+}
+
+body.premium-black-theme .course-card .platform {
+  background: rgba(212, 175, 55, 0.1);
+}
